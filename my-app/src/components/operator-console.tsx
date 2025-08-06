@@ -170,10 +170,11 @@ export default function OperatorConsole() {
                             {call.status === 'failed' && <XCircle className="w-3 h-3 mr-1" />}
                             {call.status}
                           </Badge>
-                          {call.transcript && (
+                          {call.status === 'completed' && (
                             <Button
                               variant="outline"
                               size="sm"
+                              className="bg-blue-50 text-blue-700 border-blue-300 hover:bg-blue-100"
                               onClick={() => setSelectedTranscript(call.transcript || '')}
                             >
                               View Transcript
@@ -198,17 +199,18 @@ export default function OperatorConsole() {
         <div className="fixed inset-0 bg-black bg-opacity-50 flex items-center justify-center p-4 z-50">
           <div className="bg-white rounded-lg p-6 max-w-2xl w-full max-h-[80vh] overflow-y-auto">
             <div className="flex justify-between items-center mb-4">
-              <h2 className="text-xl font-semibold">Call Transcript</h2>
+              <h2 className="text-xl font-semibold text-black">Call Transcript</h2>
               <Button
                 variant="outline"
                 size="sm"
+                className="bg-white text-black border-black hover:bg-gray-100"
                 onClick={() => setSelectedTranscript('')}
               >
                 Close
               </Button>
             </div>
-            <div className="whitespace-pre-wrap text-sm bg-gray-50 p-4 rounded">
-              {selectedTranscript}
+            <div className="whitespace-pre-wrap text-sm bg-black p-4 rounded">
+              {selectedTranscript || 'Empty transcript'}
             </div>
           </div>
                  </div>
