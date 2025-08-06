@@ -150,7 +150,7 @@ export default function OperatorConsole() {
                     <li key={call.id} className="bg-gray-50 p-4 rounded-lg border">
                       <div className="flex items-center justify-between mb-2">
                         <div>
-                          <h3 className="font-semibold">{call.candidateName}</h3>
+                          <h3 className="text-gray-600 font-semibold">{call.candidateName}</h3>
                           <p className="text-sm text-gray-600">
                             <Phone className="inline-block mr-1 w-4 h-4" /> {call.phoneNumber}
                           </p>
